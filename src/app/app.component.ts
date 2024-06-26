@@ -9,8 +9,10 @@ import { Component } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'mytodolist';
 
-   list:string[] = ['angular1'];
+   }
+  
 
-}
+
+
+ 
