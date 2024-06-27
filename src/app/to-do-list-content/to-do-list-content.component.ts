@@ -12,7 +12,7 @@ export class ToDoListContentComponent implements OnInit {
   newItem: string = ''; // uma variavel que sera implementada a cada adicção no array items 
 
   addToList() {
-    this.items.push(this.newItem); //pegar items e coloca dentro da string vazia chamada nome
+    this.items.push(this.newItem); //pegar newItem e coloca no fim do array chamado items 
     this.newItem = ''; // para resetar o campo de texto 
   }
 
