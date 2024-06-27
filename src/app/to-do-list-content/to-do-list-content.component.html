@@ -1,14 +1,18 @@
 <header>
-  <h1>To do list component</h1>
+  <h1>TO DO LIST</h1>
 </header>
 
-<div>
-  <input type="text" [(ngModel)]="newItem" placeholder="Digite uma nova tarefa"/>
+<content>
+  <input
+    type="text"
+    [(ngModel)]="newItem"
+    placeholder="Digite uma nova tarefa"
+  />
   <button (click)="addToList()">Add</button>
-</div>
+</content>
 
-<div>
-    <ul *ngFor="let newItem of items; let i = index"> {{ newItem }}
-        
-    </ul>
-  </div>
+<section>
+  <ul *ngFor="let newItem of items; let i = index">
+    {{newItem}}
+  </ul>
+</section>
