@@ -1,5 +1,5 @@
 <header>
-  <h1>TO DO LIST</h1>
+  <h1>TO DO LIST.</h1>
 </header>
 
 <content>
@@ -12,9 +12,8 @@
 </content>
 
 <section>
-  <ul *ngFor="let newItem of items; let i = index">
-    
-    {{newItem}}
-    
-  </ul>
-</section>
+    <ul >   
+      <li *ngFor="let newItem of items; let i = index" >{{newItem}}</li>
+    </ul>
+  </section>
+  

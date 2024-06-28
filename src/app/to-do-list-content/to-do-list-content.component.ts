@@ -6,15 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list-content.component.css'],
 })
 export class ToDoListContentComponent implements OnInit {
-  constructor() {}
 
-  items: string[] = ['']; // declarei um array vazio, com o nome de items 
-  newItem: string = ''; // uma variavel que sera implementada a cada adicção no array items 
+  constructor() {}
+  
+
+  items: string[] = []; // declarei um array vazio, com o nome de items 
+  newItem: string ='';  // uma variavel que sera implementada a cada adição no array items 
 
   addToList() {
-    this.items.push(this.newItem); //pegar newItem e coloca no fim do array chamado items 
-    this.newItem = ''; // para resetar o campo de texto 
-  }
+    
+      this.items.push(this.newItem); // Adiciona newItem ao final do array items
+      this.newItem = ''; // Limpa o campo de entrada após adicionar o item
+    }
+  
 
-  ngOnInit(): void {}
+
+    ngOnInit(): void {}
+  
+  
 }
