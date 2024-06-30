@@ -37,3 +37,13 @@
 .texto-preto {
   color: black;
 }
+
+.form .txt {
+    margin-top: 1rem;
+}
+
+.form button{
+    margin: .7rem;
+    display: flex;
+    flex-direction: row;
+}

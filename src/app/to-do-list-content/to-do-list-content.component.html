@@ -2,8 +2,8 @@
   <h1>TO DO LIST</h1>
 </header>
 
-<section>
-  <input
+<section class="form">
+  <input class="txt"
     type="text"
     [(ngModel)]="newItem"
     placeholder="Digite uma nova tarefa"
@@ -17,11 +17,11 @@
     <li
       *ngFor="let item of items; let i = index"
       [ngClass]="{
-        'texto-vermelho': statusCheckbox,
-        'texto-preto': !statusCheckbox
+        'texto-vermelho': statusCheckbox[i],
+        'texto-preto': !statusCheckbox[i]
       }"
     >
-      <input type="checkbox" (change)="mudarClasse()" />
+      <input type="checkbox" (change)="mudarClasse(i)" />
 
       {{ item }}
     </li>

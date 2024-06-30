@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./to-do-list-content.component.css'],
 })
 export class ToDoListContentComponent {
-  [x: string]: any;
+ 
   items: string[] = []; // Array que armazena os itens da lista
   newItem: string = ''; // Variável para armazenar o novo item a ser adicionado
+  
 
   // Método para adicionar um novo item à lista
   addToList() {
@@ -20,9 +21,10 @@ export class ToDoListContentComponent {
     this.items.pop();
     this.newItem = '';
   }
-  statusCheckbox: boolean = false;
 
-  mudarClasse() {
-    this.statusCheckbox = !this.statusCheckbox;
+  statusCheckbox: boolean[] = new Array<boolean>(this.items.length).fill(false); // Array para controlar o estado de cada checkbox
+
+  mudarClasse(index: number) {
+    this.statusCheckbox[index] = !this.statusCheckbox[index]; // Altera o estado do checkbox para o item específico na posição index
   }
 }
