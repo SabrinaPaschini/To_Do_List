@@ -1,19 +1,29 @@
-<header>
-  <h1>TO DO LIST.</h1>
+<header class="title">
+  <h1>TO DO LIST</h1>
 </header>
 
-<content>
+<section>
   <input
     type="text"
     [(ngModel)]="newItem"
     placeholder="Digite uma nova tarefa"
   />
-  <button (click)="addToList()">Add</button>
-</content>
+  <button (click)="addToList()">+</button>
+  <button (click)="removeLast()">-</button>
+</section>
 
-<section>
-    <ul >   
-      <li *ngFor="let newItem of items; let i = index" >{{newItem}}</li>
-    </ul>
-  </section>
-  
+<section class="list">
+  <ul>
+    <li
+      *ngFor="let item of items; let i = index"
+      [ngClass]="{
+        'texto-vermelho': statusCheckbox,
+        'texto-preto': !statusCheckbox
+      }"
+    >
+      <input type="checkbox" (change)="mudarClasse()" />
+
+      {{ item }}
+    </li>
+  </ul>
+</section>

@@ -1,27 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-to-do-list-content',
   templateUrl: './to-do-list-content.component.html',
   styleUrls: ['./to-do-list-content.component.css'],
 })
-export class ToDoListContentComponent implements OnInit {
+export class ToDoListContentComponent {
+  [x: string]: any;
+  items: string[] = []; // Array que armazena os itens da lista
+  newItem: string = ''; // Variável para armazenar o novo item a ser adicionado
 
-  constructor() {}
-  
-
-  items: string[] = []; // declarei um array vazio, com o nome de items 
-  newItem: string ='';  // uma variavel que sera implementada a cada adição no array items 
-
+  // Método para adicionar um novo item à lista
   addToList() {
-    
-      this.items.push(this.newItem); // Adiciona newItem ao final do array items
-      this.newItem = ''; // Limpa o campo de entrada após adicionar o item
-    }
-  
+    this.items.push(this.newItem); // Adiciona o newItem ao array items
+    this.newItem = ''; // Limpa o campo de entrada newItem
+  }
 
+  removeLast() {
+    this.items.pop();
+    this.newItem = '';
+  }
+  statusCheckbox: boolean = false;
 
-    ngOnInit(): void {}
-  
-  
+  mudarClasse() {
+    this.statusCheckbox = !this.statusCheckbox;
+  }
 }
