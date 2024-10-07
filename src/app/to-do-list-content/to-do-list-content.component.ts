@@ -24,7 +24,7 @@ export class ToDoListContentComponent {
 
   statusCheckbox: boolean[] = new Array<boolean>(this.items.length).fill(false); // Array para controlar o estado de cada checkbox
 
-  mudarClasse(index: number) {
+  changeClass(index: number) {
     this.statusCheckbox[index] = !this.statusCheckbox[index]; // Altera o estado do checkbox para o item específico na posição index
   }
 }
