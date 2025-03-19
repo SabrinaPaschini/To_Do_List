@@ -12,9 +12,14 @@ export class ToDoListContentComponent {
   
 
   // Método para adicionar um novo item à lista
+
   addToList() {
-    this.items.push(this.newItem); // Adiciona o newItem ao array items
-    this.newItem = ''; // Limpa o campo de entrada newItem
+    if (this.newItem === '') {
+      alert('Coloque uma tarefa aqui');
+    } else {
+      this.items.push(this.newItem); // Adiciona o newItem ao array items
+      this.newItem = ''; // Limpa o campo de entrada newItem
+    }
   }
 
   removeLast() {
@@ -28,3 +33,5 @@ export class ToDoListContentComponent {
     this.statusCheckbox[index] = !this.statusCheckbox[index]; // Altera o estado do checkbox para o item específico na posição index
   }
 }
+
+
